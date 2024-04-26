@@ -17,5 +17,5 @@ jobs:
       - run: |
           julia --project=. -e 'using Pkg; Pkg.instantiate();'
           julia --project=. -e 'using Pkg; Pkg.precompile();'
-          julia --project=. -e 'using Pkg; Pkg.build("PyCall");'
+          julia --project=. -e 'using Pkg; Pkg.add("PyCall");Pkg.build("PyCall");'
           julia --project=. -e 'using Pkg; Pkg.test()'
